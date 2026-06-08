@@ -3,900 +3,360 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abhishek Kumar | MCA Student & Data Analyst</title>
+  <title>Abhishek Kumar — Dev & Data</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      line-height: 1.6;
-      color: #333;
-      overflow-x: hidden;
-    }
-
-    /* Navbar */
-    .navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.95);
-      backdrop-filter: blur(10px);
-      padding: 1rem 0;
-      z-index: 1000;
-      transition: all 0.3s ease;
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 2rem;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #fff;
-    }
-
-    .logo span {
-      color: #00d4ff;
-    }
-
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 2rem;
-    }
-
-    .nav-links a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-      position: relative;
-    }
-
-    .nav-links a:hover {
-      color: #00d4ff;
-    }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: -5px;
-      left: 0;
-      background: #00d4ff;
-      transition: width 0.3s ease;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    /* Hero Section */
-    .hero {
-      height: 100vh;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.05)" points="0,0 1000,300 1000,1000 0,700"/></svg>');
-    }
-
-    .hero-content {
-      max-width: 800px;
-      padding: 2rem;
-      z-index: 2;
-      position: relative;
-    }
-
-    .hero h1 {
-      font-size: 3.5rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      animation: fadeInUp 1s ease;
-    }
-
-    .hero .highlight {
-      color: #00d4ff;
-    }
-
-    .hero p {
-      font-size: 1.3rem;
-      margin-bottom: 2rem;
-      opacity: 0.9;
-      animation: fadeInUp 1s ease 0.2s both;
-    }
-
-    .hero .location {
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-      opacity: 0.8;
-      animation: fadeInUp 1s ease 0.4s both;
-    }
-
-    .cta-buttons {
-      animation: fadeInUp 1s ease 0.6s both;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 30px;
-      margin: 0 10px;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .btn-primary {
-      background: #00d4ff;
-      color: #fff;
-      border: 2px solid #00d4ff;
-    }
-
-    .btn-primary:hover {
-      background: transparent;
-      color: #00d4ff;
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: #fff;
-      border: 2px solid #fff;
-    }
-
-    .btn-secondary:hover {
-      background: #fff;
-      color: #667eea;
-      transform: translateY(-2px);
-    }
-
-    /* Sections */
-    .section {
-      padding: 100px 0;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    .section h2 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      text-align: center;
-      margin-bottom: 3rem;
-      color: #333;
-      position: relative;
-    }
-
-    .section h2::after {
-      content: '';
-      position: absolute;
-      width: 60px;
-      height: 3px;
-      background: #00d4ff;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .bg-dark {
-      background: #1a1a1a;
-      color: #fff;
-    }
-
-    .bg-dark h2 {
-      color: #fff;
-    }
-
-    /* About Section */
-    .about-content {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .about-content p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      margin-bottom: 2rem;
-    }
-
-    /* Education Section */
-    .education-grid {
-      display: grid;
-      gap: 2rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .education-card {
-      background: #fff;
-      padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .bg-dark .education-card {
-      background: #2a2a2a;
-      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
-    }
-
-    .education-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    }
-
-    .education-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-    }
-
-    .education-card h3 {
-      color: #00d4ff;
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-    }
-
-    .education-card .institution {
-      font-weight: 600;
-      color: #666;
-      margin-bottom: 0.5rem;
-    }
-
-    .bg-dark .education-card .institution {
-      color: #ccc;
-    }
-
-    .education-card .grade {
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: #00d4ff;
-    }
-
-    .education-card .year {
-      color: #888;
-      font-style: italic;
-    }
-
-    /* Skills Section */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .skill-category {
-      background: #2a2a2a;
-      padding: 2rem;
-      border-radius: 15px;
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
-
-    .skill-category:hover {
-      transform: translateY(-10px);
-    }
-
-    .skill-category h3 {
-      color: #00d4ff;
-      font-size: 1.3rem;
-      margin-bottom: 1rem;
-      font-weight: 600;
-    }
-
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      justify-content: center;
-    }
-
-    .skill-tag {
-      background: rgba(0, 212, 255, 0.1);
-      color: #00d4ff;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      border: 1px solid rgba(0, 212, 255, 0.3);
-      transition: all 0.3s ease;
-    }
-
-    .skill-tag:hover {
-      background: #00d4ff;
-      color: #fff;
-    }
-
-    /* Experience Section */
-    .experience-card {
-      background: #fff;
-      padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      max-width: 800px;
-      margin: 0 auto;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .experience-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-    }
-
-    .experience-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .experience-header h3 {
-      color: #00d4ff;
-      font-size: 1.4rem;
-      font-weight: 600;
-    }
-
-    .experience-header .company {
-      color: #666;
-      font-weight: 500;
-      margin-top: 0.2rem;
-    }
-
-    .experience-header .duration {
-      color: #888;
-      font-style: italic;
-      background: rgba(0, 212, 255, 0.1);
-      padding: 0.3rem 1rem;
-      border-radius: 15px;
-    }
-
-    .experience-card ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .experience-card li {
-      position: relative;
-      padding-left: 1.5rem;
-      margin-bottom: 0.5rem;
-      color: #666;
-    }
-
-    .experience-card li::before {
-      content: '●';
-      position: absolute;
-      left: 0;
-      color: #00d4ff;
-    }
-
-    /* Projects Section */
-    .project-card {
-      background: #fff;
-      padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      position: relative;
-      overflow: hidden;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-    }
-
-    .project-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    }
-
-    .project-card h3 {
-      color: #00d4ff;
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
-      font-weight: 600;
-    }
-
-    .tech-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin: 1rem 0;
-    }
-
-    .tech-tag {
-      background: rgba(0, 212, 255, 0.1);
-      color: #00d4ff;
-      padding: 0.3rem 0.8rem;
-      border-radius: 15px;
-      font-size: 0.8rem;
-      border: 1px solid rgba(0, 212, 255, 0.3);
-    }
-
-    /* Certifications */
-    .cert-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .cert-card {
-      background: #2a2a2a;
-      padding: 1.5rem;
-      border-radius: 10px;
-      text-align: center;
-      border-left: 4px solid #00d4ff;
-      transition: transform 0.3s ease;
-    }
-
-    .cert-card:hover {
-      transform: translateX(10px);
-    }
-
-    .cert-card i {
-      font-size: 2rem;
-      color: #00d4ff;
-      margin-bottom: 1rem;
-    }
-
-    .cert-card h3 {
-      color: #fff;
-      margin-bottom: 0.5rem;
-    }
-
-    .cert-card p {
-      color: #ccc;
-      font-size: 0.9rem;
-    }
-
-    /* Contact Section */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .contact-card {
-      text-align: center;
-      padding: 2rem;
-      background: rgba(0, 212, 255, 0.05);
-      border-radius: 15px;
-      transition: transform 0.3s ease;
-      border: 1px solid rgba(0, 212, 255, 0.1);
-    }
-
-    .contact-card:hover {
-      transform: translateY(-5px);
-      background: rgba(0, 212, 255, 0.1);
-    }
-
-    .contact-card i {
-      font-size: 2.5rem;
-      color: #00d4ff;
-      margin-bottom: 1rem;
-    }
-
-    .contact-card h3 {
-      color: #333;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-    }
-
-    .contact-card a {
-      color: #666;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .contact-card:hover a {
-      color: #00d4ff;
-    }
-
-    /* Footer */
-    .footer {
-      background: #1a1a1a;
-      color: #fff;
-      text-align: center;
-      padding: 2rem 0;
-    }
-
-    /* Animations */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .fade-in {
-      animation: fadeInUp 1s ease;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
-
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-
-      .hero p {
-        font-size: 1.1rem;
-      }
-
-      .section {
-        padding: 60px 0;
-      }
-
-      .experience-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-      }
-
-      .btn {
-        display: block;
-        margin: 0.5rem 0;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .container {
-        padding: 0 1rem;
-      }
-
-      .hero h1 {
-        font-size: 2rem;
-      }
-
-      .section h2 {
-        font-size: 2rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="logo">Abhishek<span>Dev</span></div>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#certifications">Certifications</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
+
+  <!-- Cursor -->
+  <div class="cursor" id="cursor">
+    <div class="cursor-ring" id="cursorRing"></div>
+    <div class="cursor-dot" id="cursorDot"></div>
+  </div>
+
+  <!-- Particles -->
+  <canvas id="particles"></canvas>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo"><span>~/</span>abhishek</div>
+    <ul class="nav-links">
+      <li><a href="#about" data-num="01">About</a></li>
+      <li><a href="#education" data-num="02">Education</a></li>
+      <li><a href="#skills" data-num="03">Skills</a></li>
+      <li><a href="#experience" data-num="04">Experience</a></li>
+      <li><a href="#projects" data-num="05">Projects</a></li>
+      <li><a href="#contact" data-num="06">Contact</a></li>
+    </ul>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- HERO -->
   <header class="hero">
-    <div class="hero-content">
-      <h1>Hi, I'm <span class="highlight">Abhishek Kumar</span> 👋</h1>
-      <p>MCA Student | Python Developer | Data Analytics Enthusiast</p>
-      <p class="location">📍 From Nalanda, Bihar | Building Future with Code & Data</p>
-      <div class="cta-buttons">
-        <a href="#projects" class="btn btn-primary">View My Work</a>
-        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+     <div class="container hero-flex fade-in">
+      <!-- Left side: Photo -->
+      <div class="hero-image">
+        <div class="hero-image-wrapper">
+          <div class="tech-ring ring-1"></div>
+          <div class="tech-ring ring-2"></div>
+          <img src="image/abhishek.jpeg" alt="Abhishek Kumar - AI Developer" loading="lazy">
+        </div>
       </div>
+
+    <div class="hero-bg-text">AK</div>
+    <div class="hero-inner">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Available for Opportunities
+      </div>
+      <h1>
+        <span class="line name">Abhishek</span>
+        <span class="line accent">Kumar.</span>
+      </h1>
+      <p class="hero-subtitle">
+        <span class="tag">MCA Student</span> · Python Developer · Data Analytics Enthusiast<br>
+        Building scalable systems & extracting insight from data.<br>
+        📍 Nalanda, Bihar &mdash; LNCT Bhopal
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary"><i class="fas fa-arrow-right"></i> View My Work</a>
+        <a href="#contact" class="btn btn-ghost"><i class="fas fa-paper-plane"></i> Get In Touch</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      Scroll to explore
     </div>
   </header>
 
-  <!-- About Section -->
-  <section id="about" class="section">
-    <div class="container">
-      <h2>About Me</h2>
-      <div class="about-content fade-in">
-        <p>I am a motivated MCA student with hands-on experience in Python, Java, and full-stack web development. Certified in Data Analytics and Python programming from CISCO, I am passionate about leveraging data to solve real-world problems.</p>
-        <p>Currently pursuing my Master's in Computer Applications at Lakshmi Narain College of Technology, Bhopal, with a strong CGPA of 8.00. I'm eager to contribute to data-driven organizations and continue growing in the field of technology and analytics.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Education Section -->
-  <section id="education" class="section bg-dark">
-    <div class="container">
-      <h2>Education</h2>
-      <div class="education-grid">
-        <div class="education-card fade-in">
-          <h3>Master of Computer Application (MCA)</h3>
-          <p class="institution">Lakshmi Narain College of Technology, Bhopal</p>
-          <p class="grade">CGPA: 8.00</p>
-          <p class="year">2024 - Present</p>
-        </div>
-        <div class="education-card fade-in">
-          <h3>Bachelor of Computer Application (BCA)</h3>
-          <p class="institution">Patliputra University, Patna</p>
-          <p class="grade">Grade: 69.46%</p>
-          <p class="year">2021 - 2024</p>
-        </div>
-        <div class="education-card fade-in">
-          <h3>Intermediate (Class XII)</h3>
-          <p class="institution">BSEB (Bihar School Examination Board), Patna</p>
-          <p class="grade">Grade: 75.20%</p>
-          <p class="year">2018 - 2020</p>
-        </div>
-        <div class="education-card fade-in">
-          <h3>Class X</h3>
-          <p class="institution">BSEB (Bihar School Examination Board), Patna</p>
-          <p class="grade">Grade: 72.60%</p>
-          <p class="year">2017 - 2018</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills Section -->
-  <section id="skills" class="section bg-dark">
-    <div class="container">
-      <h2>Technical Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h3><i class="fas fa-code"></i> Programming Languages</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Java</span>
-            <span class="skill-tag">SQL</span>
-            <span class="skill-tag">C</span>
-            <span class="skill-tag">C++</span>
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-wrap">
+      <p class="section-label reveal">who i am</p>
+      <h2 class="section-title reveal">Crafting Code,<br>Decoding Data.</h2>
+      <div class="section-divider reveal"></div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>I'm a <strong>motivated MCA student</strong> with hands-on experience in Python, Java, and full-stack web development. Certified in Data Analytics and Python programming from <strong>CISCO</strong>, I'm passionate about leveraging data to solve real-world problems.</p>
+          <p>Currently pursuing my Master's at <strong>LNCT Bhopal</strong> with a CGPA of 8.00. I combine engineering thinking with analytical depth — from writing clean backend code to building meaningful visualizations.</p>
+          <div class="terminal">
+            <div class="terminal-bar">
+              <div class="t-dot t-red"></div><div class="t-dot t-yellow"></div><div class="t-dot t-green"></div>
+            </div>
+            <div class="terminal-body">
+              <div class="line"><span class="t-prompt">$ </span><span class="t-cmd">cat profile.json</span></div>
+              <div class="line"><span class="t-out">{</span></div>
+              <div class="line">&nbsp;&nbsp;<span class="t-key">"name"</span><span class="t-out">: </span><span class="t-val">"Abhishek Kumar"</span><span class="t-out">,</span></div>
+              <div class="line">&nbsp;&nbsp;<span class="t-key">"role"</span><span class="t-out">: </span><span class="t-val">"Python Dev & Data Analyst"</span><span class="t-out">,</span></div>
+              <div class="line">&nbsp;&nbsp;<span class="t-key">"cgpa"</span><span class="t-out">: </span><span class="t-val">8.00</span><span class="t-out">,</span></div>
+              <div class="line">&nbsp;&nbsp;<span class="t-key">"location"</span><span class="t-out">: </span><span class="t-val">"Bihar, India"</span></div>
+              <div class="line"><span class="t-out">}</span></div>
+              <div class="line"><span class="t-prompt">$ </span><span class="t-cursor"></span></div>
+            </div>
           </div>
         </div>
-        <div class="skill-category">
-          <h3><i class="fas fa-database"></i> Data Tools</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">MySQL</span>
-            <span class="skill-tag">Pandas</span>
-            <span class="skill-tag">NumPy</span>
-            <span class="skill-tag">Excel</span>
+        <div class="about-stats reveal">
+          <div class="stat-box">
+            <div class="stat-num">8.0</div>
+            <div class="stat-label">CGPA (MCA)</div>
           </div>
-        </div>
-        <div class="skill-category">
-          <h3><i class="fas fa-chart-bar"></i> Visualization</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Matplotlib</span>
-            <span class="skill-tag">Power BI</span>
+          <div class="stat-box">
+            <div class="stat-num">3+</div>
+            <div class="stat-label">Certifications</div>
           </div>
-        </div>
-        <div class="skill-category">
-          <h3><i class="fas fa-globe"></i> Web Technologies</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">HTML</span>
-            <span class="skill-tag">CSS</span>
-            <span class="skill-tag">Node.js</span>
-            <span class="skill-tag">Express</span>
+          <div class="stat-box">
+            <div class="stat-num">5+</div>
+            <div class="stat-label">Languages Known</div>
           </div>
-        </div>
-        <div class="skill-category">
-          <h3><i class="fas fa-brain"></i> Core Concepts</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Data Analysis</span>
-            <span class="skill-tag">OOPs</span>
-            <span class="skill-tag">DSA</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3><i class="fas fa-users"></i> Soft Skills</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Team Collaboration</span>
-            <span class="skill-tag">Quick Learning</span>
-            <span class="skill-tag">Time Management</span>
-            <span class="skill-tag">Communication</span>
+          <div class="stat-box">
+            <div class="stat-num">2</div>
+            <div class="stat-label">Internships Done</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Experience Section -->
-  <section id="experience" class="section">
-    <div class="container">
-      <h2>Internship Experience</h2>
-      <div class="experience-card fade-in">
-        <div class="experience-header">
-          <div>
+  <!-- EDUCATION -->
+  <section id="education" class="edu-section">
+    <div class="section-wrap">
+      <p class="section-label reveal">academic journey</p>
+      <h2 class="section-title reveal">Education.</h2>
+      <div class="section-divider reveal"></div>
+      <div class="timeline reveal">
+        <div class="edu-item">
+          <div class="edu-meta">
+            <h3>Master of Computer Application</h3>
+            <span class="edu-year">2024 – Present</span>
+          </div>
+          <p class="edu-inst">Lakshmi Narain College of Technology, Bhopal</p>
+          <p class="edu-grade">CGPA: 8.00</p>
+        </div>
+        <div class="edu-item">
+          <div class="edu-meta">
+            <h3>Bachelor of Computer Application</h3>
+            <span class="edu-year">2021 – 2024</span>
+          </div>
+          <p class="edu-inst">Patliputra University, Patna</p>
+          <p class="edu-grade">Grade: 69.46%</p>
+        </div>
+        <div class="edu-item">
+          <div class="edu-meta">
+            <h3>Intermediate (Class XII)</h3>
+            <span class="edu-year">2018 – 2020</span>
+          </div>
+          <p class="edu-inst">BSEB (Bihar School Examination Board), Patna</p>
+          <p class="edu-grade">Grade: 75.20%</p>
+        </div>
+        <div class="edu-item" style="margin-bottom:0">
+          <div class="edu-meta">
+            <h3>Secondary (Class X)</h3>
+            <span class="edu-year">2017 – 2018</span>
+          </div>
+          <p class="edu-inst">BSEB (Bihar School Examination Board), Patna</p>
+          <p class="edu-grade">Grade: 72.60%</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="skills-section">
+    <div class="section-wrap">
+      <p class="section-label reveal">what i work with</p>
+      <h2 class="section-title reveal">Tech Stack.</h2>
+      <div class="section-divider reveal"></div>
+      <div class="skills-container">
+        <div class="skill-row reveal">
+          <div class="skill-row-label">// Languages</div>
+          <div class="skill-pills">
+            <span class="pill pill-cyan">Python</span>
+            <span class="pill pill-cyan">Java</span>
+            <span class="pill pill-cyan">SQL</span>
+            <span class="pill pill-cyan">C</span>
+            <span class="pill pill-cyan">C++</span>
+          </div>
+        </div>
+        <div class="skill-row reveal">
+          <div class="skill-row-label">// Data & Analytics</div>
+          <div class="skill-pills">
+            <span class="pill pill-purple">MySQL</span>
+            <span class="pill pill-purple">Pandas</span>
+            <span class="pill pill-purple">NumPy</span>
+            <span class="pill pill-purple">Excel</span>
+            <span class="pill pill-purple">Matplotlib</span>
+            <span class="pill pill-purple">Power BI</span>
+          </div>
+        </div>
+        <div class="skill-row reveal">
+          <div class="skill-row-label">// Web Technologies</div>
+          <div class="skill-pills">
+            <span class="pill pill-red">HTML</span>
+            <span class="pill pill-red">CSS</span>
+            <span class="pill pill-red">Node.js</span>
+            <span class="pill pill-red">Express</span>
+          </div>
+        </div>
+        <div class="skill-row reveal">
+          <div class="skill-row-label">// Core Concepts</div>
+          <div class="skill-pills">
+            <span class="pill pill-white">Data Analysis</span>
+            <span class="pill pill-white">OOP</span>
+            <span class="pill pill-white">DSA</span>
+            <span class="pill pill-white">System Design</span>
+            <span class="pill pill-white">File Management</span>
+          </div>
+        </div>
+        <div class="skill-row reveal">
+          <div class="skill-row-label">// Soft Skills</div>
+          <div class="skill-pills">
+            <span class="pill pill-white">Team Collaboration</span>
+            <span class="pill pill-white">Quick Learner</span>
+            <span class="pill pill-white">Time Management</span>
+            <span class="pill pill-white">Communication</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-wrap">
+      <p class="section-label reveal">work history</p>
+      <h2 class="section-title reveal">Experience.</h2>
+      <div class="section-divider reveal"></div>
+      <div class="exp-card reveal">
+        <div class="exp-corner"></div>
+        <div class="exp-header">
+          <div class="exp-title-group">
             <h3>Python Programmer Intern</h3>
-            <p class="company">VAULT OF CODES - Remote</p>
+            <p class="exp-company">⚡ VAULT OF CODES — Remote</p>
           </div>
-          <span class="duration">June 2025 – July 2025</span>
+          <span class="exp-duration">June 2025 – July 2025</span>
         </div>
-        <ul>
-          <li>Focused on Python application development and Object-Oriented Programming principles</li>
-          <li>Contributed to backend logic development and system architecture</li>
-          <li>Performed comprehensive code optimization to improve application performance</li>
-          <li>Collaborated with development team on multiple Python projects</li>
+        <ul class="exp-points">
+          <li>Focused on Python application development and Object-Oriented Programming principles, building modular and maintainable codebases.</li>
+          <li>Contributed to backend logic development and system architecture across multiple team projects.</li>
+          <li>Performed comprehensive code optimization and refactoring to improve application performance and readability.</li>
+          <li>Collaborated in an agile remote team environment, participating in code reviews and technical discussions.</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="section bg-dark">
-    <div class="container">
-      <h2>Projects</h2>
-      <div class="project-card fade-in">
-        <h3><i class="fas fa-vote-yea"></i> Electronic Voting Machine</h3>
-        <p>Developed a simulated electronic voting machine system using C++ for secure data processing and efficient file management. The system includes user authentication, vote casting, and result compilation features.</p>
-        <div class="tech-stack">
-          <span class="tech-tag">C++</span>
-          <span class="tech-tag">File Handling</span>
-          <span class="tech-tag">Data Structures</span>
-          <span class="tech-tag">System Design</span>
+  <!-- PROJECTS -->
+  <section id="projects" class="projects-section">
+    <div class="section-wrap">
+      <p class="section-label reveal">what i've built</p>
+      <h2 class="section-title reveal">Projects.</h2>
+      <div class="section-divider reveal"></div>
+      <div class="project-card reveal">
+        <div class="project-number">01</div>
+        <div class="project-icon">🗳️</div>
+        <h3>Electronic Voting Machine</h3>
+        <p>A simulated electronic voting system built in C++ with secure data processing and efficient file management. Features voter authentication, real-time vote casting, and automated result compilation — designed with both security and usability in mind.</p>
+        <div class="project-techs">
+          <span class="tech-badge">C++</span>
+          <span class="tech-badge">File Handling</span>
+          <span class="tech-badge">Data Structures</span>
+          <span class="tech-badge">System Design</span>
         </div>
-        <p><strong>Key Features:</strong> Secure voting process, Real-time data processing, File-based data persistence, User-friendly interface</p>
+        <div class="project-features">
+          <span class="feature-tag">Secure Voting Process</span>
+          <span class="feature-tag">Real-time Processing</span>
+          <span class="feature-tag">File-based Persistence</span>
+          <span class="feature-tag">User-friendly Interface</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Certifications Section -->
-  <section id="certifications" class="section bg-dark">
-    <div class="container">
-      <h2>Certifications</h2>
-      <div class="cert-grid">
-        <div class="cert-card">
-          <i class="fas fa-chart-line"></i>
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" class="certs-section">
+    <div class="section-wrap">
+      <p class="section-label reveal">credentials</p>
+      <h2 class="section-title reveal">Certifications.</h2>
+      <div class="section-divider reveal"></div>
+      <div class="certs-grid">
+        <div class="cert-card reveal">
+          <div class="cert-icon"><i class="fas fa-chart-line"></i></div>
           <h3>Data Analytics</h3>
-          <p>Certified by CISCO</p>
+          <p class="cert-by">Certified by CISCO</p>
+          <div class="cert-stripe"></div>
         </div>
-        <div class="cert-card">
-          <i class="fab fa-python"></i>
-          <h3>Python Essential</h3>
-          <p>Certified by CISCO</p>
+        <div class="cert-card reveal">
+          <div class="cert-icon"><i class="fab fa-python"></i></div>
+          <h3>Python Essentials</h3>
+          <p class="cert-by">Certified by CISCO</p>
+          <div class="cert-stripe"></div>
         </div>
-        <div class="cert-card">
-          <i class="fas fa-server"></i>
+        <div class="cert-card reveal">
+          <div class="cert-icon"><i class="fas fa-server"></i></div>
           <h3>Backend Web Development</h3>
-          <p>Node.js, Express & JavaScript<br>Certified by GDSC KIIT</p>
+          <p class="cert-by">Node.js, Express & JavaScript<br>GDSC KIIT</p>
+          <div class="cert-stripe"></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="section">
-    <div class="container">
-      <h2>Let's Connect</h2>
-      <div class="contact-grid">
-        <div class="contact-card">
-          <i class="fas fa-envelope"></i>
-          <h3>Email</h3>
-          <a href="mailto:kumarabhishek913528@gmail.com">kumarabhishek913528@gmail.com</a>
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section">
+    <div class="section-wrap">
+      <div class="contact-inner">
+        <div class="contact-left reveal">
+          <p class="section-label">let's talk</p>
+          <div class="big-text">Got an idea?<br>Let's <span>build</span><br>it together.</div>
+          <p>Open to internships, freelance projects, and full-time opportunities. Drop a message and I'll get back to you.</p>
+          <a href="mailto:kumarabhishek913528@gmail.com" class="btn btn-primary">
+            <i class="fas fa-envelope"></i> Send a Message
+          </a>
         </div>
-        <div class="contact-card">
-          <i class="fas fa-phone"></i>
-          <h3>Phone</h3>
-          <a href="tel:+916203378574">+91 6203378574</a>
+        <div class="contact-links reveal">
+          <a href="mailto:kumarabhishek913528@gmail.com" class="contact-link">
+            <div class="contact-link-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-link-text">
+              <strong>Email</strong>
+              kumarabhishek913528@gmail.com
+            </div>
+            <span class="contact-link-arrow">↗</span>
+          </a>
+          <a href="tel:+916203378574" class="contact-link">
+            <div class="contact-link-icon"><i class="fas fa-phone"></i></div>
+            <div class="contact-link-text">
+              <strong>Phone</strong>
+              +91 6203378574
+            </div>
+            <span class="contact-link-arrow">↗</span>
+          </a>
+          <a href="https://linkedin.com/in/abhishek-kumar-561719307" target="_blank" class="contact-link">
+            <div class="contact-link-icon"><i class="fab fa-linkedin"></i></div>
+            <div class="contact-link-text">
+              <strong>LinkedIn</strong>
+              abhishek-kumar-561719307
+            </div>
+            <span class="contact-link-arrow">↗</span>
+          </a>
+          <div class="contact-link" style="cursor:default;">
+            <div class="contact-link-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="contact-link-text">
+              <strong>Location</strong>
+              Nalanda, Bihar, India
+            </div>
+          </div>
         </div>
-        <div class="contact-card">
-          <i class="fab fa-linkedin"></i>
-          <h3>LinkedIn</h3>
-          <a href="https://linkedin.com/in/abhishek-kumar-561719307" target="_blank">Connect with me</a>
-        </div>
-        <div class="contact-card">
-          <i class="fas fa-map-marker-alt"></i>
-          <h3>Location</h3>
-          <p>Nalanda, Bihar, India</p>
-        </div>
-      </div>
-      <div class="cta-buttons" style="text-align: center; margin-top: 2rem;">
-        <a href="mailto:kumarabhishek913528@gmail.com" class="btn btn-primary">Let's Work Together</a>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>© 2025 Abhishek Kumar | Built with 💙 and Python mindset</p>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo"><span>~/</span>abhishek-kumar · 2025</div>
+    <p>Built with abhishek & a Python mindset 🐍</p>
   </footer>
-
-  <script>
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-
-    // Add scroll effect to navbar
-    window.addEventListener('scroll', function() {
-      const navbar = document.querySelector('.navbar');
-      if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(0, 0, 0, 0.98)';
-      } else {
-        navbar.style.background = 'rgba(0, 0, 0, 0.95)';
-      }
-    });
-
-    // Intersection Observer for animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, observerOptions);
-
-    // Observe all cards and sections
-    document.querySelectorAll('.fade-in, .education-card, .skill-category, .experience-card, .project-card, .cert-card, .contact-card').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(30px)';
-      el.style.transition = 'all 0.6s ease';
-      observer.observe(el);
-    });
-  </script>
 </body>
 </html>
