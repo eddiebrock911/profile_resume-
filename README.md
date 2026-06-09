@@ -9,7 +9,7 @@
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![Font Awesome](https://img.shields.io/badge/Font_Awesome-339AF0?style=for-the-badge&logo=fontawesome&logoColor=white)](https://fontawesome.com/)
 [![GitHub stars](https://img.shields.io/github/stars/eddiebrock911/profile_resume-?style=for-the-badge&logo=github&color=00ffaa)](https://github.com/eddiebrock911/profile_resume-/stargazers)
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-🚀%20View%20Portfolio-00FFAA?style=for-the-badge)](https://eddiebrock911.github.io/profile_resume-)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-🚀%20View%20Portfolio-00FFAA?style=for-the-badge)](https://abhishekkit.onrender.com/)
 
 <br/>
 
@@ -19,26 +19,13 @@
 
 ---
 
-## 📌 Table of Contents
-
-- [🖥️ Live Preview](#️-live-preview)
-- [✨ Features](#-features)
-- [🎨 Design Highlights](#-design-highlights)
-- [📁 Project Structure](#-project-structure)
-- [🛠️ Tech Stack](#️-tech-stack)
-- [🚀 Getting Started](#-getting-started)
-- [📐 Sections Overview](#-sections-overview)
-- [📱 Responsive Design](#-responsive-design)
-- [🤝 Contributing](#-contributing)
-- [👤 About Me](#-about-me)
-
----
-
 ## 🖥️ Live Preview
 
 <div align="center">
 
-[![Live Demo](https://img.shields.io/badge/🌐_Portfolio_Live-eddiebrock911.github.io-00FFAA?style=for-the-badge)](https://eddiebrock911.github.io/profile_resume-)
+[![Live Demo](https://img.shields.io/badge/🌐_Portfolio_Live-eddiebrock911.github.io-00FFAA?style=for-the-badge)](https://abhishekkit.onrender.com/)
+<br>
+[👤 About Me](https://github.com/eddiebrock911)
 
 </div>
 
